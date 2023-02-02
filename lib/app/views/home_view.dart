@@ -25,6 +25,7 @@ class _HomeViewState extends State<HomeView> {
     // ignore: prefer_typing_uninitialized_variables
 
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: SizedBox(
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
