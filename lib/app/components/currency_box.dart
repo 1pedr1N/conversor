@@ -1,8 +1,18 @@
+import 'package:conversor/app/models/currency_model.dart';
 import 'package:flutter/material.dart';
 
 class CurrencyBox extends StatelessWidget {
-  const CurrencyBox({Key? key}) : super(key: key);
-
+  final List<CurrencyModel> items;
+  final TextEditingController controller;
+  final void Function(CurrencyModel? model)? onChanged;
+  final CurrencyModel selectedItem;
+  const CurrencyBox(
+      {Key? key,
+      required this.items,
+      required this.controller,
+      required this.onChanged,
+      required this.selectedItem})
+      : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -12,24 +22,31 @@ class CurrencyBox extends StatelessWidget {
         Expanded(
             child: SizedBox(
                 height: 56,
-                child: DropdownButton<String>(
-                    iconEnabledColor: Colors.amber,
-                    isExpanded: true,
-                    underline: Container(
-                      height: 1,
-                      color: Colors.amber,
-                    ),
-                    items: const [
-                      DropdownMenuItem(child: Text('Dolar')),
-                    ],
-                    onChanged: (value) {}))),
+                child: DropdownButton<CurrencyModel>(
+                  isExpanded: true,
+                  value: selectedItem,
+                  underline: Container(
+                    height: 1,
+                    color: Colors.amber,
+                  ),
+                  items: items
+                      .map((e) => DropdownMenuItem(
+                          value: e,
+                          child: Text(
+                            e.name,
+                            style: const TextStyle(color: Colors.amber),
+                          )))
+                      .toList(),
+                  onChanged: onChanged,
+                ))),
         const SizedBox(
           width: 20,
         ),
-        const Expanded(
+        Expanded(
             flex: 2,
             child: TextField(
-              decoration: InputDecoration(
+              controller: controller,
+              decoration: const InputDecoration(
                 enabledBorder: UnderlineInputBorder(
                   borderSide: BorderSide(color: Colors.amber),
                 ),

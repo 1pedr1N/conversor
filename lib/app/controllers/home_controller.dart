@@ -1,14 +1,13 @@
 import 'package:flutter/widgets.dart';
-
 import '../models/currency_model.dart';
 
 class HomeController {
   late List<CurrencyModel> currencies;
   late CurrencyModel toCurrency;
   late CurrencyModel fromCurrency;
-  late TextEditingController toText = TextEditingController();
-  late TextEditingController fromText = TextEditingController();
-  HomeController() {
+  final TextEditingController toText;
+  final TextEditingController fromText;
+  HomeController({required this.toText, required this.fromText}) {
     currencies = CurrencyModel.getCurrencies();
     toCurrency = currencies[0];
     fromCurrency = currencies[1];
@@ -27,5 +26,6 @@ class HomeController {
     } else if (fromCurrency.name == 'Bitcoin') {
       returnValue = (value * toCurrency.btc);
     }
+    fromText.text = returnValue.toStringAsFixed(2);
   }
 }
