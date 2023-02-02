@@ -1,16 +1,35 @@
-# conversor
+# Este foi um conversor de moedas feito em Flutter
 
-A new Flutter project.
+<h3>o objetivo é converter o preço do real para o dólar e vice-versa </h3>
 
-## Getting Started
+### Fotos do projeto
 
-This project is a starting point for a Flutter application.
+![image](https://media.discordapp.net/attachments/757695400894529547/1070543161090392104/image.png)
 
-A few resources to get you started if this is your first Flutter project:
+### Quais são as tecnologias utilizadas?
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- Flutter
+- Dart
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### Como rodar o projeto?
+
+- Clone o repositório
+- Abra o projeto no Android Studio
+- Execute o projeto
+
+### Como contribuir?
+
+- Faça um fork do projeto
+- Crie uma branch com a sua feature: `git checkout -b my-feature`
+- Faça commit das suas alterações: `git commit -m 'feat: My new feature'`
+- Faça push para a sua branch: `git push origin my-feature`
+
+### Licença
+
+Esse projeto está sob a licença MIT.
+
+### Autor
+
+Feito com ❤️ por Pedro Silva (https://www.linkedin.com/in/pedro-henrique-silva-de-morais-3091a619b/)
+
+<3 <3 <3
